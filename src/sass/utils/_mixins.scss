@@ -2,3 +2,17 @@
   font-size: $fz;
   line-height: $lh / $fz;
 }
+
+//  $count - количество карточек в ряду; $indent - отступ между карточками
+@mixin calcFor($count, $indent) {
+  margin-left: $indent;
+  margin-top: $indent;
+  flex-basis: calc((100% - #{$count} * #{$indent}) / #{$count});
+}
+//  для card-set
+@mixin flex-container($indent) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$indent;
+  margin-top: -$indent;
+}
